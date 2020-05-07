@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "/dist/aup-online-caf",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
