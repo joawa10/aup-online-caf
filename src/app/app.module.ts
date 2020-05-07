@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { environment } from './../environments/environment';
@@ -53,7 +54,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ]),
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
