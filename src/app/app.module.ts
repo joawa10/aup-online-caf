@@ -1,3 +1,5 @@
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -36,7 +38,17 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'check-out', component: CheckOutComponent },
+      { path: 'order-success', component: OrderSuccessComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'admin/products', component: AdminProductsComponent },
+      { path: 'admin/orders', component: AdminOrdersComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
