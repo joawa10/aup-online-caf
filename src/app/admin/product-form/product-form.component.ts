@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit {
   categories$;
+  product:any = {}; //changed to : any = {}; 
 
   constructor(
     private router: Router,
