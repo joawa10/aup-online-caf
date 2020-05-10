@@ -17,16 +17,9 @@ export class ProductService {
 
   getAll(): Observable<Product[]> {
     return this.db.list<Product>('/products')
-        .snapshotChanges()
-        .pipe(
-            map(changes =>
-                changes.map(c => {
-                    const data = c.payload.val() as Product;
-                    const id = c.payload.key;
-                    return { id, ...data };
-                })
-            )
-        );
+        .snapshotChanges().map(changes => {
+          return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+        });
   }
   get(productId) {
     return this.db.object('/products/' + productId);

@@ -14,7 +14,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   subscription: Subscription; //fix
 
   constructor(private productService: ProductService) { //fix
-    this.subscription = this.productService.getAll()
+    this.subscription = this.productService.getAll() //has snapshotChanges in fix product key commit
     .subscribe(products => this.filteredProducts = this.products = products); 
   }
 
