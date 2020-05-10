@@ -3,13 +3,18 @@
     <div class="col-3">
         <div class="list-group">
             <a
-            *ngFor="let c of categories$ | async"
-            routerLink="/"
-            [queryParams]="{ category: c.key }"
-            class="list-group-item list-group-item-action"
-            [class.active]="category === c.key"
-            >
-                {{ c.payload.val().name }}
+                class="list-group-item list-group-item-action"
+                [class.active]="!category"
+                routerLink="/"
+                >All categories</a>
+            <a
+                *ngFor="let c of categories$ | async"
+                routerLink="/"
+                [queryParams]="{ category: c.key }"
+                class="list-group-item list-group-item-action"
+                [class.active]="category === c.key"
+                >
+                    {{ c.payload.val().name }}
             </a>
         </div>
     </div>
