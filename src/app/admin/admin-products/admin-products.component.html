@@ -35,8 +35,8 @@
   <data-table-column
     [property]="'$key'"  
   >
-    <ng-template #dataTableCell let-item="item">
-      <a [routerLink]="['/admin/products/', item.$key]">Edit</a>
+    <ng-template #dataTableCell let-item="item">      
+      <a [routerLink]="['/admin/products/', item.key]">Edit</a> <!-- remove $ in key -->      
     </ng-template>
   </data-table-column>
 
