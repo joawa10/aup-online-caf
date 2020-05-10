@@ -1,6 +1,7 @@
 import { ProductService } from 'src/app/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-admin-products',
@@ -8,10 +9,10 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
-  products: {title: string}[]; //fix
+  products: Product[]; //fix
   filteredProducts: any[]; //fix
   subscription: Subscription; //fix
-  
+
   constructor(private productService: ProductService) { //fix
     this.subscription = this.productService.getAll()
     .subscribe(products => this.filteredProducts = this.products = products); 
@@ -19,7 +20,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
   filter(query: string) { //fix
     this.filteredProducts = (query) ?
-      this.products.filter(p => p.title.includes(query)) :
+      this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) :
       this.products;
   }
 
