@@ -53,7 +53,7 @@ export class ShoppingCartService {
     let item$$ = this.getItem(cartId, product.key);
     
     item$.take(1).subscribe(item => {
-      item$$.update({ product: product, quantity: (item.quantity || 0) + change});
+      item$$.update({ product: product, quantity: (item?.quantity || 0) + change}); //added item?.quantity
   });
   }
 }

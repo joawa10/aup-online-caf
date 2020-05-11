@@ -14,7 +14,8 @@
         <tbody>
             <tr *ngFor="let productId of cart.productIds">
                 <td>
-                    {{ cart.items[productId].product.title }}
+                    <!-- added product?.title -->
+                    {{ cart.items[productId].product?.title }}
                 </td>
                 <td>
                     {{ cart.items[productId].quantity }}
