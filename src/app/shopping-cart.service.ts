@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { ShoppingCart } from './models/shopping-cart';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class ShoppingCartService {
   }
 
   private getItem(cartId: string, productId: string) {
-    return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
+    return this.db.object('/shopping-carts/' + cartId + '/items/' + productId); //can add <any>
   }
 
   private async getOrCreateCartId(): Promise<string> {
@@ -49,11 +49,28 @@ export class ShoppingCartService {
 
   private async updateItemQuantity(product: Product, change: number) {
     let cartId = await this.getOrCreateCartId();
-    let item$: Observable<any> = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).valueChanges();
-    let item$$ = this.getItem(cartId, product.key);
-    
-    item$.take(1).subscribe(item => {
-      item$$.update({ product: product, quantity: (item.quantity || 0) + change});
-  });
+    let item$ = this.getItem(cartId, product.key);
+    item$
+      .snapshotChanges()
+      .pipe(take(1))
+      .subscribe(item => {
+        let quantity = (item.payload.child("/quantity").val() || 0) + change;
+        if(quantity == 0) item$.remove();
+        else item$.update({
+          title: product.title,
+          imageUrl:product.imageUrl,
+          price: product.price,
+          quantity: quantity
+        });
+      });
   }
+  // private async updateItemQuantity(product: Product, change: number) {
+  //   let cartId = await this.getOrCreateCartId();
+  //   let item$: Observable<any> = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).valueChanges();
+  //   let item$$ = this.getItem(cartId, product.key);
+    
+  //   item$.take(1).subscribe(item => {
+  //     item$$.update({ product: product, quantity: (item.quantity || 0) + change});
+  // });
+  // }
 }
