@@ -36,19 +36,20 @@ export class ShoppingCartService {
   }
 
   async addToCart(product: Product) {
+    this.updateItemQuantity(product, 1);
+  }
+
+  async removeFromCart(product: Product) {
+    this.updateItemQuantity(product, -1);
+  }
+
+  private async updateItemQuantity(product: Product, change: number) {
     let cartId = await this.getOrCreateCartId();
     let item$: Observable<any> = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).valueChanges();
     let item$$ = this.getItem(cartId, product.key);
     
     item$.take(1).subscribe(item => {
-      if( item === null ) {
-        item$$.set({product: product, quantity: 1});
-        console.log('adding new product to cart');
-    }else{
-        item$$.update({quantity: item.quantity + 1});
-        console.log('updating exisiting product ');
-    }
-    });
-
+      item$$.update({ product: product, quantity: (item.quantity || 0) + change});
+  });
   }
 }
