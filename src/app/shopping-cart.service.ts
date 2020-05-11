@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs/Observable';
+import { Product } from 'src/app/models/product';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/take';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +21,29 @@ export class ShoppingCartService {
     return this.db.object('/shopping-carts/' + cartId);
   }
 
-  private async getOrCreateCart() {
+  private async getOrCreateCartId() {
     let cartId = localStorage.getItem('cartId');
-    if (!cartId) {
-      let result = await this.create();
-      localStorage.setItem('cartId', result.key);
-      return this.getCart(result.key);     
-    }
+    if (cartId) return cartId;
+
+    let result = await this.create();
+    localStorage.setItem('cartId', result.key);
+    return result.key;   
+  }
+
+  async addToCart(product: Product) {
+    let cartId = await this.getOrCreateCartId();
+    let item$: Observable<any> = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).valueChanges();
+    let item$$ = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key);
     
-    return this.getCart(cartId);    
+    item$.take(1).subscribe(item => {
+      if( item === null ) {
+        item$$.set({product: product, quantity: 1});
+        console.log('adding new product to cart');
+    }else{
+        item$$.update({quantity: item.quantity + 1});
+        console.log('updating exisiting product ');
+    }
+    });
+
   }
 }
