@@ -1,0 +1,20 @@
+<div class="card">    
+    <div class="card-body">
+      <h5 class="card-title">Order Summary</h5>      
+      <p class="card-text">You have {{ cart?.totalItemsCount }} items in your shopping cart.</p> <!-- add elvis operator -->
+      <ul class="list-group">
+          <li *ngFor="let item of cart?.items" class="list-group-item">
+              {{ item?.quantity }} x {{ item?.title }} <!-- add elvis operator -->
+              <div class="float-right">
+                  {{ item?.totalPrice | currency: 'PHP' }} <!-- add elvis operator -->
+              </div>
+          </li>
+          <li class="list-group-item">
+              Total
+              <div class="float-right">
+                  {{ cart?.totalPrice | currency: 'PHP' }} <!-- add elvis operator -->
+              </div>
+          </li>
+      </ul>
+    </div>
+  </div>

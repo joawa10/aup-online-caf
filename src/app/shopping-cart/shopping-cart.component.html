@@ -21,9 +21,8 @@
                 <td>
                     <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail"></div>
                 </td>
-                <td>
-                    <!-- add elvis operator -->
-                    {{ item?.title }}
+                <td>                    
+                    {{ item?.title }} <!-- add elvis operator -->
                 </td>
                 <td>
                     <product-quantity [product]="item" [shopping-cart]="cart">                        
