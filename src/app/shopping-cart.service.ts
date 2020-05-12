@@ -58,12 +58,13 @@ export class ShoppingCartService {
     let item$$ = this.getItem(cartId, product.key);
     
     item$.take(1).subscribe(item => {
-      item$$.update({ 
-        // product: product, 
+      let quantity = (item?.quantity || 0) + change; //add elvis operator
+      if (quantity === 0) item$$.remove();
+      else item$$.update({
         title: product.title,
-        imageUrl:product.imageUrl,
+        imageUrl: product.imageUrl,
         price: product.price,
-        quantity: (item?.quantity || 0) + change //add elvis operator
+        quantity: quantity
       }); 
   });
   }
