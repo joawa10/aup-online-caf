@@ -23,7 +23,7 @@ export class ShoppingCartService {
   async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
     return this.db.object('/shopping-carts/' + cartId).snapshotChanges() //add snapshotChanges
-      .pipe(map(x => new ShoppingCart(x.payload.exportVal().items)));
+      .pipe(map(x => new ShoppingCart(x.payload.exportVal()?.items))); //add elvis operator
   }
 
   private getItem(cartId: string, productId: string) {
@@ -40,11 +40,11 @@ export class ShoppingCartService {
   }
 
   async addToCart(product: Product) {
-    this.updateItemQuantity(product, 1);
+    this.updateItem(product, 1);
   }
 
   async removeFromCart(product: Product) {
-    this.updateItemQuantity(product, -1);
+    this.updateItem(product, -1);
   }
 
   // private async updateItemQuantity(product: Product, change: number) {
@@ -64,13 +64,19 @@ export class ShoppingCartService {
   //       });
   //     });
   // }
-  private async updateItemQuantity(product: Product, change: number) {
+  private async updateItem(product: Product, change: number) {
     let cartId = await this.getOrCreateCartId();
     let item$: Observable<any> = this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).valueChanges();
     let item$$ = this.getItem(cartId, product.key);
     
     item$.take(1).subscribe(item => {
-      item$$.update({ product: product, quantity: (item?.quantity || 0) + change}); //add elvis operator
+      item$$.update({ 
+        // product: product, 
+        title: product.title,
+        imageUrl:product.imageUrl,
+        price: product.price,
+        quantity: (item?.quantity || 0) + change //add elvis operator
+      }); 
   });
   }
 }
