@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Product } from './models/product';
+import { Product } from '../models/product';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductService {
 
   constructor(private db: AngularFireDatabase) { }

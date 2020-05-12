@@ -1,15 +1,13 @@
 import { Observable } from 'rxjs/Observable';
-import { Product } from 'src/app/models/product';
+import { Product } from '../models/product';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
-import { ShoppingCart } from './models/shopping-cart';
+import { ShoppingCart } from '../models/shopping-cart';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 import { map, take } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ShoppingCartService {
 
   constructor(private db: AngularFireDatabase) { }
