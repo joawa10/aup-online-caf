@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" routerLink="/">
         <i class='fas fa-bread-slice' aria-hidden="true"></i> 
       </a>
@@ -15,6 +15,11 @@
               <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
                 {{ cart.totalItemsCount }}
               </span>
+            </a>            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products">
+              Products
             </a>
           </li>
         </ul>
