@@ -1,3 +1,4 @@
+import { HomeComponent } from './core/components/home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -28,7 +29,7 @@ import { ShoppingModule } from './shopping/shopping.module';
     AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     RouterModule.forRoot([
-      { path: '', component: ProductsComponent },      
+      { path: '', component: HomeComponent },      
       { path: 'login', component: LoginComponent },  
     ]),    
   ],

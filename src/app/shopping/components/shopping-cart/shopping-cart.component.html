@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Shopping Cart</h1>
 <div class="row col-10" *ngIf="cart$ | async as cart">
     <p>
@@ -46,4 +47,5 @@
         *ngIf="cart.items.length"
         routerLink="/check-out"
         class="btn btn-primary">Check Out</a>    
+</div>
 </div>

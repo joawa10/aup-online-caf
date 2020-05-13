@@ -1,8 +1,9 @@
+<div class="sticky-top"></div>
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" routerLink="/">
         <i class='fas fa-bread-slice' aria-hidden="true"></i> 
-      </a>
+      </a>      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,9 +16,12 @@
               <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
                 {{ cart.totalItemsCount }}
               </span>
-            </a>
+            </a>            
           </li>
-        </ul>
+          <a class="navbar-brand" routerLink="/products">
+            Products 
+          </a>
+        </ul>        
         <ul class="navbar-nav">
           <ng-template #anonymousUser>
             <li class="nav-item">
@@ -42,3 +46,4 @@
       </div>
     </div>    
   </nav>
+<div class="sticky-top">
