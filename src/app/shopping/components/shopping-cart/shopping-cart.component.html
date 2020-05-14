@@ -6,7 +6,7 @@
         <button
         *ngIf="cart.items.length"
         (click)="clearCart()"
-        class="btn btn-light btn-sm">Clear Shopping Cart</button>
+        class="btn btn-light btn-m">Clear Shopping Cart</button>
     </p>
     <table class="table">
         <thead>
@@ -26,7 +26,7 @@
                     {{ item?.title }} <!-- add elvis operator -->
                 </td>
                 <td>
-                    <product-quantity [product]="item" [shopping-cart]="cart">                        
+                    <product-quantity [product]="item" [shopping-cart]="cart">
                     </product-quantity>
                 </td>
                 <td class="text-right">
@@ -46,6 +46,6 @@
     <a 
         *ngIf="cart.items.length"
         routerLink="/check-out"
-        class="btn btn-primary">Check Out</a>    
+        class="btn btn-primary btn-m">Check Out</a>    
 </div>
 </div>
