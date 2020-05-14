@@ -2,3 +2,11 @@
 .dropdown-toggle {
     cursor: pointer;
 }
+
+.navbar-brand.products {
+    padding-left: 10px;
+}
+
+.nav-item .nav-link {
+    font-size: larger;
+}
