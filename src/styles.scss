@@ -9,6 +9,10 @@ body {
     padding-top: 10px; //gap below navbar
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 h1,
 h2,
 h3,
