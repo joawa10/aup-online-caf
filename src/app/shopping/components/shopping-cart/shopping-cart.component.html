@@ -30,7 +30,7 @@
                     </product-quantity>
                 </td>
                 <td class="text-right">
-                    {{ item.totalPrice | currency:'PHP' }}
+                    {{ item.totalPrice | currency: "₱" }}
                 </td>
             </tr>
         </tbody>
@@ -39,7 +39,7 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th class="text-right">{{ cart.totalPrice | currency:'PHP' }}</th>
+                <th class="text-right">{{ cart.totalPrice | currency: "₱" }}</th>
             </tr>
         </tfoot>
     </table>
