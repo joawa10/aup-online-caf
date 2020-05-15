@@ -1,10 +1,16 @@
 {
   "hosting": {
-    "public": "/dist/aup-online-caf",
+    "public": "./dist/aup-online-caf",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
