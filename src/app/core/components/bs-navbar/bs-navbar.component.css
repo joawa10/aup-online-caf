@@ -3,6 +3,10 @@
     cursor: pointer;
 }
 
+.dropdown-item {
+    cursor: pointer;
+}
+
 .navbar-brand.products {
     padding-left: 10px;
 }
