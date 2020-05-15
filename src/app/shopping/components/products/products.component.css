@@ -1,5 +1,13 @@
-.container-fluid {
-    padding-top: 80px; 
-    margin-left: 3%;
-    padding-right: 6%;
+.container {
+    padding-top: 80px !important;
+}
+
+.row {    
+    margin-right: -150px !important;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: .7 !important;
+    max-width: 50% !important;
 }
