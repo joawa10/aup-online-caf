@@ -1,4 +1,14 @@
 .container {
-    margin-top: 80px;
+    margin-top: 180px;
     font-size: larger;
+    text-align: center;
+}
+.fa-google:before {
+    margin-right: 10px;
+}
+
+.btn-xl {
+    padding: 2rem 4rem;
+    font-size: 3rem;
+    border-radius: 10px;
 }
