@@ -14,3 +14,11 @@
 .nav-item .nav-link {
     font-size: larger;
 }
+
+.container {
+    justify-content: left !important;
+}
+
+.right-content {
+    justify-content: right !important;
+}
