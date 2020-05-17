@@ -23,7 +23,7 @@
                     <h5 class="card-title category">BREAD</h5>
                     <p class="card-text"><small class="text-muted">Our bakers work each and every day to bring you the most delicious, freshly baked bread possible.</small></p>
                     <div class="col text-center">
-                        <button routerLink="/products" type="button" class="btn btn-outline-warning btn-lg">Try Our Bread</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'bread'}" type="button" class="btn btn-outline-warning btn-lg">Try Our Bread</button>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <h5 class="card-title category">DRINKS</h5>
                     <p class="card-text"><small class="text-muted">From soya milk, buko juice to our carrot juice, your thirst will be quenched like never before with our refreshing drinks</small></p>
                     <div class="col text-center">
-                        <button routerLink="/products" type="button" class="btn btn-outline-warning btn-lg">Try Our Drinks</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'drinks'}" type="button" class="btn btn-outline-warning btn-lg">Try Our Drinks</button>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <h5 class="card-title category" style="font-size: 2.8rem;">VEGE GOODS</h5>
                     <p class="card-text"><small class="text-muted">Our vege products unleashes the cooking skills within you. Ensuring firm crunchy tofus, burger patty, tapas and others feature a chewy interior riddled with a deep-gold crust.</small></p>
                     <div class="col text-center">
-                        <button routerLink="/products" type="button" class="btn btn-outline-warning btn-lg">Try our Vege Goods</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'vegeGoods'}" type="button" class="btn btn-outline-warning btn-lg">Try our Vege Goods</button>
                     </div>
                 </div>
             </div>
