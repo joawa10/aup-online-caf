@@ -4,53 +4,61 @@
 <div class="hero-text">
     <h2 class="banner-intro brush-script-font">The Best Food for the Finest</h2>
     <h5 class="banner-title">AUP HEALTH FOODS</h5>
-    <p class="banner-quote">We strive for consistency so that each product of our factory delivers the same reliably satisfying experience while offering an exciting oppurtunity for healthy living</p>
+    <p class="banner-quote">We strive for consistency so that each product of our factory delivers the same reliably
+        satisfying experience while offering an exciting oppurtunity for healthy living</p>
     <button routerLink="/products" type="button" class="btn btn-outline-warning btn-lg">Shop Now</button>
 </div>
 
 <!-- sample category -->
+<h2 class="category-intro text-center brush-script-font">Made from real 100% vegetables and plants</h2>
+<h5 class="category-title text-center">ORGANIC AND MEAT FREE</h5>
+<div class="container category" style="padding-bottom: 100px;">
 
-<div class="container" style="padding-bottom: 100px;">
-    <h2 class="category-intro text-center brush-script-font">Made from real 100% vegetables and plants</h2>
-    <h5 class="category-title text-center">ORGANIC AND MEAT FREE</h5>
     <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="card text-center" style="width: 18rem;">
                 <img class="card-img-top img-fluid"
                     src="https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt="">
                 <div class="card-body">
                     <h5 class="card-title category">BREAD</h5>
-                    <p class="card-text"><small class="text-muted">Our bakers work each and every day to bring you the most delicious, freshly baked bread possible.</small></p>
+                    <p class="card-text"><small class="text-muted">Our bakers work each and every day to bring you the
+                            most delicious, freshly baked bread possible.</small></p>
                     <div class="col text-center">
-                        <button [routerLink]="['/products']" [queryParams]="{category:'bread'}" type="button" class="btn btn-outline-warning btn-lg">Try Our Bread</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'bread'}" type="button"
+                            class="btn btn-outline-warning btn-lg">Try Our Bread</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="card text-center" style="width: 18rem;">
                 <img class="card-img-top img-fluid"
                     src="https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     alt="">
                 <div class="card-body">
                     <h5 class="card-title category">DRINKS</h5>
-                    <p class="card-text"><small class="text-muted">From soya milk, buko juice to our carrot juice, your thirst will be quenched like never before with our refreshing drinks</small></p>
+                    <p class="card-text"><small class="text-muted">From soya milk, buko juice to our carrot juice, your
+                            thirst will be quenched like never before with our refreshing drinks</small></p>
                     <div class="col text-center">
-                        <button [routerLink]="['/products']" [queryParams]="{category:'drinks'}" type="button" class="btn btn-outline-warning btn-lg">Try Our Drinks</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'drinks'}" type="button"
+                            class="btn btn-outline-warning btn-lg">Try Our Drinks</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="card text-center" style="width: 18rem;">
                 <img class="card-img-top img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/6/66/Tofu_4.jpg"
                     alt="">
                 <div class="card-body">
                     <h5 class="card-title category" style="font-size: 2.8rem;">VEGE GOODS</h5>
-                    <p class="card-text"><small class="text-muted">Our vege products unleashes the cooking skills within you. Ensuring firm crunchy tofus, burger patty, tapas and others feature a chewy interior riddled with a deep-gold crust.</small></p>
+                    <p class="card-text"><small class="text-muted">Our vege products unleashes the cooking skills within
+                            you. Ensuring firm crunchy tofus, burger patty, tapas and others feature a chewy interior
+                            riddled with a deep-gold crust.</small></p>
                     <div class="col text-center">
-                        <button [routerLink]="['/products']" [queryParams]="{category:'vegeGoods'}" type="button" class="btn btn-outline-warning btn-lg">Try our Vege Goods</button>
+                        <button [routerLink]="['/products']" [queryParams]="{category:'vegeGoods'}" type="button"
+                            class="btn btn-outline-warning btn-lg">Try our Vege Goods</button>
                     </div>
                 </div>
             </div>
@@ -65,18 +73,20 @@
         <h5 class="text-center brush-script-font" style="color: rgb(247, 212, 57)">Humble beginnings</h5>
         <h2 class="about-title text-center">ABOUT PUC HEALTH FOODS</h2>
         <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6">
                 <img class="img-left"
                     src="https://images.pexels.com/photos/3218467/pexels-photo-3218467.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                     alt="Card image cap">
             </div>
-            <div class="col-6">
-                <div class="card" style="width: 40vw; background-color: #F4F3EB;">
+            <div class="col-sm-6">
+                <div class="card about" style="width: 40vw; background-color: #F4F3EB;">
                     <div class="card-body about">
-                        <h5 class="card-title">Started in 1939, the school decides to promote biblical healthy diet and begins serving only
+                        <h5 class="card-title">Started in 1939, the school decides to promote biblical healthy diet and
+                            begins serving only
                             vegetarian dishes in the caferia. This initiates the development of the food factory later
                             known as the PUC Health Foods</h5>
-                        <p class="card-text"><small class="text-muted">AUP Health Foods creates exceptional vegetarian products and
+                        <p class="card-text about"><small class="text-muted">AUP Health Foods creates exceptional vegetarian
+                                products and
                                 variety of pastries such as
                                 pineapple and coconut cookies, yema cakes, choco loaf, variety of hopia flavors,
                                 terin-terin, and many more. The
