@@ -14,13 +14,11 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingModule } from './shopping/shopping.module';
-import { OrdersViewComponent } from './shopping/components/orders-view/orders-view.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OrdersViewComponent,
+    AppComponent,    
   ],
   imports: [
     BrowserModule,
