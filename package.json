@@ -28,7 +28,7 @@
     "angular7-data-table": "^1.0.13",
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^7.14.2",
     "font-awesome": "^4.7.0",
     "ng2-validation": "^4.2.0",
